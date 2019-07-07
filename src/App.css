@@ -97,4 +97,10 @@ input[type=text]:focus{
 .btn1:hover::before,.btn2:hover::before{
     height: 180%;
 }
-
+.not-found{
+    display: grid;
+    justify-items: center;
+    margin-top: 50px;
+    font-size: 50px;
+    color: red;
+}

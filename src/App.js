@@ -22,6 +22,13 @@ class App extends React.Component {
   searchName=(event)=>{
     event.preventDefault();
       const newData = {}
+      if (this.state.term.trim() === ""){
+        this.setState({
+          data:newData,
+        });
+      return;
+      }
+
       for (var key in data) {
         if(data[key].name.id.toLowerCase().includes(this.state.term.toLowerCase())){
            newData[key]=data[key]
@@ -42,7 +49,6 @@ class App extends React.Component {
       <div className="container">
         <div className ="top-container">   
           <form>
-          
               <input 
               onChange={this.searchHandler} type="text" placeholder ="Find your smartphones "
                       value ={this.state.term} /> 
@@ -59,8 +65,10 @@ class App extends React.Component {
 
           
         </div>
-        
-       <SmartphonesTable  data={this.state.data}/>
+       { Object.keys(this.state.data).length
+         ?<SmartphonesTable  data={this.state.data}/>
+          :<div className ="not-found">not found</div>
+       }
       </div>
     );
   }
