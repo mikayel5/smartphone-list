@@ -1,0 +1,17 @@
+.tables{
+    display: grid;
+    text-align: center;
+    justify-content:center;
+    grid-template-columns: 75%;
+    margin-top: 25px;
+
+}
+
+th{
+    font-size: 20px;
+    padding: 10px;
+}
+
+td{
+    border: 1px solid rebeccapurple
+}

@@ -1,9 +1,11 @@
 import React from  'react';
+import './style.css'
+
 
 export default function SmartphonesTable(props){
-
     return (
-       <table>
+       <div className="tables">
+           <table>
            <thead>
                <tr>
                    <th>Name</th>
@@ -31,5 +33,7 @@ export default function SmartphonesTable(props){
 
             </tbody>
        </table>
+            
+       </div>
    )
 }
