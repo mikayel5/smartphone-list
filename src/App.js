@@ -48,7 +48,7 @@ class App extends React.Component {
     return (
       <div className="container">
         <div className ="top-container">   
-          <form>
+          <form onSubmit={this.searchName}>
               <input 
               onChange={this.searchHandler} type="text" placeholder ="Find your smartphones "
                       value ={this.state.term} /> 
@@ -57,13 +57,11 @@ class App extends React.Component {
               type= "button">Search</button>
           </form>
           <div className="showall">
-            <p>Smartphon  Lists</p>
+            <p>Smartphone List</p>
             <button className= "btn btn2"
                   onClick={this.showAll} 
                   type="button">Show All</button>
           </div>
-
-          
         </div>
        { Object.keys(this.state.data).length
          ?<SmartphonesTable  data={this.state.data}/>
